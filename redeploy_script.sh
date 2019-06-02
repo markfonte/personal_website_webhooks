@@ -14,6 +14,7 @@ start() {
 	git pull
 	pm2 restart www
 	cd client
+	npm install
 	npm run build
 }
 
