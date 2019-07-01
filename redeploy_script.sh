@@ -12,8 +12,10 @@ usage() {
 start() {
 	cd ../personal_website
 	git pull
+	cd api
+	npm install
 	pm2 restart www
-	cd client
+	cd ../client
 	npm install
 	npm run build
 }
