@@ -11,6 +11,8 @@ usage() {
 
 start() {
 	cd ../personal_website
+	rm api/package-lock.json
+	rm client/package-lock.json
 	git pull
 	cd api
 	npm install
