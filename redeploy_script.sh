@@ -16,9 +16,11 @@ start() {
 	git pull
 	cd api
 	npm install
+	npm audit fix
 	pm2 restart www
 	cd ../client
 	npm install
+	npm audit fix
 	npm run build
 }
 
