@@ -11,16 +11,14 @@ usage() {
 
 start() {
 	cd ../personal_website
-	rm api/package-lock.json
-	rm client/package-lock.json
+	rm api/package-lock.json || true
+	rm client/package-lock.json || true
 	git pull
 	cd api
 	npm install
-	npm audit fix
 	pm2 restart www
 	cd ../client
 	npm install
-	npm audit fix
 	npm run build
 }
 
