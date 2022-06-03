@@ -10,16 +10,22 @@ usage() {
 }
 
 start() {
+	echo "Starting redeploy script"
 	cd ../personal_website
 	rm api/package-lock.json || true
 	rm client/package-lock.json || true
-	git pull
+	git pull || true
+	echo "Pulled"
 	cd api
 	npm install
-	pm2 restart www
+	echo "Successful api install"
+	pm2 restart www || true
+	echo "Restarted api"
 	cd ../client
-	npm install
-	npm run build
+	npm install --legacy-peer-deps
+	echo "Successful client install"
+	npm run build || true
+	echo "Finished redeployment"
 }
 
 if [[ $# -ne 1 ]]; then
