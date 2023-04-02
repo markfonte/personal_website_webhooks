@@ -20,7 +20,7 @@ start() {
 	cd api
 	npm install
 	echo "Successful api install"
-	pm2 restart www || true
+	pm2 restart api || true
 	echo "Restarted api"
 	cd ../client
 	npm install --legacy-peer-deps
