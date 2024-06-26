@@ -11,8 +11,6 @@ usage() {
 
 start() {
 	echo "Starting redeploy script"
-	sudo apt update
-	sudo apt install git
 	curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 	cd ../personal_website
 	git restore .
