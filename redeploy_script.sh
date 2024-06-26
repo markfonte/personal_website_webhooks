@@ -13,8 +13,6 @@ start() {
 	echo "Starting redeploy script"
 	cd ../personal_website
 	git restore .
-	rm api/package-lock.json || true
-	rm client/package-lock.json || true
 	git pull
 	echo "Pulled"
 	cd api
