@@ -13,6 +13,7 @@ nvm use 22.3.0
 
 echo "Started startup script at: $(date)"
 
+cd $HOME/webhook
 pm2 start redeploy.js || true
 cd $HOME/personal_website/api
 pm2 stop api || true
