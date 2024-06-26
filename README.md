@@ -12,6 +12,12 @@ pm2 start redeploy.js
 ```
 
 ### Adding Startup Script to Reboot
+#### Option 1
+```sh
+pm2 startup     # follow prompts
+```
+
+#### Option 2
 ```sh
 crontab -e
 
