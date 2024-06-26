@@ -10,7 +10,7 @@ usage() {
 }
 
 start() {
-	echo "Starting redeploy script"
+	echo "Started redeploy script at: $(date)"
 	curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 	cd ../personal_website
 	git restore .
@@ -26,7 +26,7 @@ start() {
 	yarn install
 	echo "Successful client install"
 	yarn build
-	echo "Finished redeployment"
+	echo "Finished redeploy script at: $(date)"
 }
 
 if [[ $# -ne 1 ]]; then
