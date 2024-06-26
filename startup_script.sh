@@ -18,7 +18,7 @@ set -x
 echo "Started startup script at: $(date)"
 
 cd $HOME/personal_website_webhook
-pm2 start redeploy.js || true
+pm2 restart redeploy.js || true
 cd $HOME/personal_website/api
 pm2 stop api || true
 pm2 start "yarn start" --name "api" || true
