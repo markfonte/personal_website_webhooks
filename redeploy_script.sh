@@ -19,7 +19,7 @@ start() {
 	pm2 stop api || true	# May not already be running
 	yarn install
 	echo "Successful api install"
-	pm2 start npm --name "api" -- start
+	pm2 start yarn --name "api" -- start
 	echo "Restarted api"
 	cd ../client
 	yarn install
