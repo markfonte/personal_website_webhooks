@@ -1,7 +1,6 @@
 #!/bin/bash
 # personal_website startup script
 
-set -Eeuo pipefail
 set -e
 set -x
 
