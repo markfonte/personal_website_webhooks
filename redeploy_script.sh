@@ -16,14 +16,15 @@ start() {
 	git pull
 	echo "Pulled"
 	cd api
-	npm install
+	pm2 stop api || true	# May not already be running
+	yarn install
 	echo "Successful api install"
-	pm2 restart api || true
+	pm2 start npm --name "api" -- start
 	echo "Restarted api"
 	cd ../client
-	npm install --legacy-peer-deps
+	yarn install
 	echo "Successful client install"
-	npm run build || true
+	yarn build
 	echo "Finished redeployment"
 }
 
