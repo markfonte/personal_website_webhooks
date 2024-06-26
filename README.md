@@ -1,2 +1,4 @@
 ## Usage
-pm2 start redeploy.js 
+```sh
+pm2 start redeploy.js
+```
