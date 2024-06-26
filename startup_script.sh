@@ -7,8 +7,8 @@ set -x
 
 echo "Started startup script at: $(date)"
 
-pm2 start redeploy.js
+pm2 start redeploy.js || true
 cd $HOME/personal_website/api
-pm2 start yarn --name "api" -- start
+pm2 start yarn --name "api" -- start || true
 
 echo "Finished startup script at: $(date)"

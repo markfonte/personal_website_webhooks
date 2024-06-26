@@ -4,7 +4,7 @@ const port = 6969
 const { exec } = require('child_process');
 
 app.post('/webhook', (req, res) => {
-	exec('./redeploy_script.sh start', (err, stdout, stderr) => {console.log(stdout);});
+	exec('./redeploy_script.sh start >> output.log 2>&1', (err, stdout, stderr) => { console.log(stdout); });
 	res.sendStatus(200);
 })
 
