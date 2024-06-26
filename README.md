@@ -23,5 +23,5 @@ crontab -e
 
 ...
 
-@reboot sh $HOME/personal_website_webhook/startup_script.sh >> $HOME/personal_website_webhook/output.log 2>&1
+@reboot sh $HOME/personal_website_webhooks/startup_script.sh >> $HOME/personal_website_webhooks/output.log 2>&1
 ```

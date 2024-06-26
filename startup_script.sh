@@ -17,7 +17,7 @@ sudo apt autoremove || true
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 nvm install node
 
-cd $HOME/webhook
+cd $HOME/personal_website_webhook
 pm2 start redeploy.js || true
 cd $HOME/personal_website/api
 pm2 stop api || true
