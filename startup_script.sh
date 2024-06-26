@@ -11,6 +11,12 @@ set -x
 
 echo "Started startup script at: $(date)"
 
+sudo apt-get update || true
+sudo apt-get upgrade || true
+sudo apt autoremove || true
+curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+nvm install node
+
 cd $HOME/webhook
 pm2 start redeploy.js || true
 cd $HOME/personal_website/api

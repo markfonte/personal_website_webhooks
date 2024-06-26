@@ -11,7 +11,6 @@ usage() {
 
 start() {
 	echo "Started redeploy script at: $(date)"
-	curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 	cd ../personal_website
 	git restore .
 	git pull
