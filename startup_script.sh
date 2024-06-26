@@ -9,6 +9,7 @@ echo "Started startup script at: $(date)"
 
 pm2 start redeploy.js || true
 cd $HOME/personal_website/api
-pm2 start yarn --name "api" -- start || true
+pm2 stop api || true
+pm2 start "yarn start" --name "api" || true
 
 echo "Finished startup script at: $(date)"
