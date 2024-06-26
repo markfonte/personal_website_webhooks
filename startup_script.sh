@@ -6,16 +6,16 @@ export NVM_DIR="$HOME/.nvm"
 
 nvm use 22.3.0
 
-set -e
-set -x
-
-echo "Started startup script at: $(date)"
-
 sudo apt-get update || true
 sudo apt-get upgrade || true
 sudo apt autoremove || true
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 nvm install node
+
+set -e
+set -x
+
+echo "Started startup script at: $(date)"
 
 cd $HOME/personal_website_webhook
 pm2 start redeploy.js || true
