@@ -13,10 +13,12 @@ nvm use 22.3.0
 
 echo "Started startup script at: $(date)"
 
+pm2 save
 cd $HOME/webhook
 pm2 start redeploy.js || true
 cd $HOME/personal_website/api
 pm2 stop api || true
 pm2 start "yarn start" --name "api" || true
+pm2 save
 
 echo "Finished startup script at: $(date)"
