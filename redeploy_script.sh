@@ -11,21 +11,23 @@ usage() {
 
 start() {
 	echo "Started redeploy script at: $(date)"
-	curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+	nvm install --lts
 	cd ../personal_website
 	git restore .
 	git pull
 	echo "Pulled"
 	cd api
 	pm2 stop api || true	# May not already be running
-	yarn install
+	rm package-lock.json || true
+	npm install --legacy-peer-deps
 	echo "Successful api install"
-	pm2 start "yarn start" --name "api"
+	pm2 start "npm run start" --name "api"
 	echo "Restarted api"
 	cd ../client
-	yarn install
+	rm package-lock.json || true
+	npm install --legacy-peer-deps
 	echo "Successful client install"
-	yarn build
+	npm run build
 	echo "Finished redeploy script at: $(date)"
 }
 
