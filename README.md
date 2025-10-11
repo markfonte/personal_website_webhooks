@@ -1,4 +1,9 @@
 ## Usage
+### Setup
+```sh
+sudo apt install nodejs -y
+npm install
+```
 
 ### Run Redeploy Script
 ```sh
@@ -6,9 +11,14 @@
 ./redeploy_script.sh usage
 ```
 
+### Serve Redeploy Script
+```sh
+node redeploy.js
+```
+
 ### Keep Redeploy Script Alive
 ```sh
-pm2 start redeploy.js
+pm2 start "node redeploy.js" --name redeploy
 ```
 
 ### Adding Startup Script to Reboot

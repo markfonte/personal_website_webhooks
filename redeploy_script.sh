@@ -10,8 +10,8 @@ usage() {
 }
 
 start() {
+	echo "------------------------------------------------------------------------------"
 	echo "Started redeploy script at: $(date)"
-	nvm install --lts
 	cd ../personal_website
 	git restore .
 	git pull
