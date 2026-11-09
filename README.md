@@ -12,7 +12,9 @@ npm install
 ```
 
 ### Serve Redeploy Script
-GitHub signs every webhook delivery with the webhook's secret, and `redeploy.js` rejects any request without a valid signature. Put the same secret in `.env`, which git ignores:
+`redeploy.js` needs Node 20.12 or newer to read `.env`. The server runs it under nvm's Node 22.
+
+GitHub signs every webhook delivery with the webhook's secret, and `redeploy.js` rejects any request without a valid signature. In the webhook's settings on GitHub, set the content type to `application/json` and set a secret. Put the same secret in `.env`, which git ignores:
 ```sh
 WEBHOOK_SECRET=...
 ```
